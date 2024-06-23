@@ -1,0 +1,33 @@
+## Bv2Video
+
+### 功能：
+
+这是一个下载脚本，通过给予的 bv 号解析并下载相应的 b 站视频到本地
+质量为 Bili 账号支持的最高画质&音质
+
+本项目基于 bilibili-API-collect 项目提供的 api
+
+### 依赖组件
+
+- 需要 ffmpeg 支持，将 ffmpeg 放到根目录，并将其文件夹命名为 ffmpeg
+
+### 设置文件
+
+使用需要在根目录建立一个 settings.json 设置文件
+
+```json
+{
+  "headers": {
+    "user-agent": "",
+    "cookie": "",
+    "referer": "https://www.bilibili.com"
+  },
+  "bv_num": ""
+}
+```
+
+需要登录 b 站账号，在请求头，找到 user-agent 字段，以及 cookie 的 SESSDATA 字段分别填入“user-agent”和“cookie”
+
+将需要下载的视频 bv 号填入“bv_num”,运行脚本。
+
+下载的文件在 outputs 文件夹下
